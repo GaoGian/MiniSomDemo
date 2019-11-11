@@ -1,6 +1,7 @@
 from minisom import MiniSom
 import numpy as np
 import matplotlib.pyplot as plt
+# %matplotlib inline
 
 img = plt.imread('./resource/house.jpg')
 plt.imshow(img)
@@ -28,14 +29,14 @@ plt.title('Original')
 plt.imshow(img)
 plt.subplot(222)
 plt.title('Result')
-plt.imshow(clustered)
+plt.imshow(clustered.astype(int))
 
 plt.subplot(223)
 plt.title('Initial Colors')
-plt.imshow(starting_weights)
+plt.imshow(starting_weights.astype(int))
 plt.subplot(224)
 plt.title('Learnt Colors')
-plt.imshow(som.get_weights())
+plt.imshow(som.get_weights().astype(int))
 
 plt.tight_layout()
 plt.show()
